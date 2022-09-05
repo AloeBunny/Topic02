@@ -5,8 +5,9 @@ public class DeliveryDataBean implements java.io.Serializable{
 	
 	private int dd_id;
 	private int users_id;
-	private int platformid;
+	private int d_pid;
 	private float worktime;
+	private String insertdate
 	private int d_count;
 	private int d_discount;
 	private float dailyincome;
@@ -27,10 +28,10 @@ public class DeliveryDataBean implements java.io.Serializable{
 		this.users_id = users_id;
 	}
 	public int getPlatformid() {
-		return platformid;
+		return d_pid;
 	}
 	public void setPlatformid(int platformid) {
-		this.platformid = platformid;
+		this.d_pid = d_pid;
 	}
 	public float getWorktime() {
 		return worktime;
