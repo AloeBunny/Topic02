@@ -7,7 +7,7 @@ public class DeliveryDataBean implements java.io.Serializable{
 	private int users_id;
 	private int d_pid;
 	private float worktime;
-	private String insertdate
+	private String insertdate;
 	private int d_count;
 	private int d_discount;
 	private float dailyincome;
