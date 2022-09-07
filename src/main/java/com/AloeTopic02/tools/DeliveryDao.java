@@ -278,7 +278,7 @@ public class DeliveryDao {
 	
 	public List<DeliveryDataBean> findWeeklyDData(DeliveryDataBean ddb) throws SQLException{
 
-		String sql = "select*from DeliveryData where [insertdate] BETWEEN ? AND ? and users_id=1 and d_pid=1;";
+		String sql = "select*from DeliveryData where [insertdate] BETWEEN ? AND ? and users_id= ? and d_pid= ?;";
 		PreparedStatement preState = conn.prepareStatement(sql);
 		
 		preState.setDate(1, ddb.getInsertdate());
