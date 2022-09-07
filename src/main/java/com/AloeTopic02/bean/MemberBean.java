@@ -9,6 +9,17 @@ public class MemberBean implements java.io.Serializable{
 	private String nickname;
 	
 	
+	public MemberBean() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public MemberBean( String m_account, String m_password, String nickname) {
+		super();
+
+		this.m_account = m_account;
+		this.m_password = m_password;
+		this.nickname = nickname;
+	}
 	public int getM_id() {
 		return m_id;
 	}

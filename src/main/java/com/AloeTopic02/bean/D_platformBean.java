@@ -7,6 +7,15 @@ public class D_platformBean implements java.io.Serializable{
 	private String p_name;
 	
 	
+	public D_platformBean(String p_name) {
+		super();
+		
+		this.p_name = p_name;
+	}
+	public D_platformBean() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public int getP_id() {
 		return p_id;
 	}
