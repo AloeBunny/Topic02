@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.AloeTopic02.bean.D_platformBean;
-import com.AloeTopic02.bean.DeliveryDataBean;
+import com.AloeTopic02.bean.DeliveryDataBean01;
 import com.AloeTopic02.bean.MemberBean;
 
 public class DeliveryDao {
@@ -217,7 +217,7 @@ public class DeliveryDao {
 //	insert into DeliveryData (users_id, d_pid, insertdate, worktime, d_count, d_discount, dailyincome)
 //	values('int', 'int', 'date', 'float', 'int', 'int', 'float');
 
-	public void addDeliveryData(DeliveryDataBean ddb) throws SQLException {
+	public void addDeliveryData(DeliveryDataBean01 ddb) throws SQLException {
 		String sql = "insert into DeliveryData (users_id, d_pid, insertdate, worktime, d_count, d_discount, dailyincome)\r\n"
 				+ "values(?, ?, ?, ?, ?, ?, ?);";
 		PreparedStatement preState = conn.prepareStatement(sql);
@@ -240,7 +240,7 @@ public class DeliveryDao {
 //	--查詢跑單紀錄總表
 //	select*from DeliveryData where users_id=? and d_pid=?;
 	
-	public List<DeliveryDataBean> findAllDeliveryData(int user_id, int d_pid) throws SQLException{
+	public List<DeliveryDataBean01> findAllDeliveryData(int user_id, int d_pid) throws SQLException{
 		String sql = "select*from DeliveryData where users_id=? and d_pid=?;";
 		PreparedStatement preState = conn.prepareStatement(sql);
 		preState.setInt(1, user_id);
@@ -249,10 +249,10 @@ public class DeliveryDao {
 		
 		ResultSet rs = preState.executeQuery();
 		
-		List<DeliveryDataBean> list = new ArrayList<DeliveryDataBean>();
+		List<DeliveryDataBean01> list = new ArrayList<DeliveryDataBean01>();
 		
 		while (rs.next()) {
-			DeliveryDataBean ddb1 = new DeliveryDataBean();
+			DeliveryDataBean01 ddb1 = new DeliveryDataBean01();
 			ddb1.setDd_id(rs.getInt("dd_id"));
 			ddb1.setUsers_id(rs.getInt("users_id"));
 			ddb1.setD_pid(rs.getInt("d_pid"));
@@ -276,7 +276,7 @@ public class DeliveryDao {
 //	--查詢期間跑單紀錄
 //	select*from DeliveryData where [insertdate] BETWEEN '2022-01-01' AND '2022-01-04' and users_id=1 and d_pid=1;
 	
-	public List<DeliveryDataBean> findWeeklyDData(DeliveryDataBean ddb) throws SQLException{
+	public List<DeliveryDataBean01> findWeeklyDData(DeliveryDataBean01 ddb) throws SQLException{
 
 		String sql = "select*from DeliveryData where [insertdate] BETWEEN ? AND ? and users_id= ? and d_pid= ?;";
 		PreparedStatement preState = conn.prepareStatement(sql);
@@ -290,10 +290,10 @@ public class DeliveryDao {
 		
 		ResultSet rs = preState.executeQuery();
 		
-		List<DeliveryDataBean> list = new ArrayList<DeliveryDataBean>();
+		List<DeliveryDataBean01> list = new ArrayList<DeliveryDataBean01>();
 		
 		while (rs.next()) {
-			DeliveryDataBean ddb1 = new DeliveryDataBean();
+			DeliveryDataBean01 ddb1 = new DeliveryDataBean01();
 			ddb1.setDd_id(rs.getInt("dd_id"));
 			ddb1.setUsers_id(rs.getInt("users_id"));
 			ddb1.setD_pid(rs.getInt("d_pid"));

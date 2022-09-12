@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>增加送單資料</title>
+	<link rel="stylesheet" type="text/css" href="01.css">
+	<style>
+body {
+					height: 100vh;
+					width: 100vw;
+				}
+
+				body {
+					margin: 0;
+					background: linear-gradient(45deg, #49a09d, #5f2c82);
+					font-family: sans-serif;
+					font-weight: 100;
+				}
+
+				table {
+					width: 800px;
+					border-collapse: collapse;
+					overflow: hidden;
+					box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+				}
+
+				div {
+					padding: 15px;
+					background-color: rgba(255, 255, 255, 0.2);
+					color: #fff;
+				}
+
+				th {
+					text-align: left;
+				}
+
+				button {
+					outline: none !important;
+					border: none;
+					background: transparent;
+				}
+	</style>
+</head>
+
+<body>
+	<br>
+	<h2 align="center">增加送單資料</h2>
+	<form style="text-align: center;" method="post" action="../AddData">
+		<div>
+			<label for="d_pid">選擇平台：</label>
+			<select name="d_pid">
+				<option value=" " disabled selected>請選擇</option>
+				<option value="1">FoodPanda</option>
+				<option value="2">uberEat</option>
+				<option value="3">LaLaMove</option>
+				<option value="4">Pickupp</option>
+				<option value="5">GlobalExpress</option>
+			</select>
+		</div>
+		<div>
+
+			<label for="insertdate">選擇日期：</label>
+			<input type="date" id="insertdate" name="insertdate">
+
+		</div>
+		<Div>
+			<label for="worktime">工作時數：</label>
+			<input type="text" name="worktime" size=12>
+		</Div>
+		<Div>
+			<label for="worktime">當日接單：</label>
+			<input type="text" name="d_count" size=12>
+		</Div>
+		<Div>
+			<label for="worktime">當日拒單：</label>
+			<input type="text" name="d_discount" size=12>
+		</Div>
+		<Div>
+			<label for="worktime">當日收入：</label>
+			<input type="text" name="dailyincome" size=12>
+		</Div>
+
+		<input type="submit" value="確定" /> <br /> <br />
+		
+
+		
+		<h3 align="center">
+			<a href="http://localhost:8080/Topic02/tool/HomePage.html">回首頁</a>
+		</h3>
+	</form>
+</body>
+
+</html>

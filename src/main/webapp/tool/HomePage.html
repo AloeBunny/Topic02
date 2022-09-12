@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>外送資料查詢系統</title>
+<link rel="stylesheet" type="text/css" href="01.css">
+<style>
+
+body {
+	height: 100vh;
+	
+}
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+	font-family: sans-serif;
+	font-weight: 100;
+}
+input {
+	outline: none;
+	border: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #adadad;}
+input:-moz-placeholder { color: #adadad;}
+input::-moz-placeholder { color: #adadad;}
+input:-ms-input-placeholder { color: #adadad;}
+
+textarea::-webkit-input-placeholder { color: #adadad;}
+textarea:-moz-placeholder { color: #adadad;}
+textarea::-moz-placeholder { color: #adadad;}
+textarea:-ms-input-placeholder { color: #adadad;}
+</style>
+
+</head>
+<body>
+    <h1 align="center">外送資料查詢系統</h1>
+    <div align="center">
+        <form  method="post" action="../GetDataByDate">
+        			<div>
+			<label for="d_pid">請選擇平台：</label>
+			<select name="d_pid">
+				<option value=" " disabled selected>請選擇</option>
+				<option value="1">FoodPanda</option>
+				<option value="2">uberEat</option>
+				<option value="3">LaLaMove</option>
+				<option value="4">Pickupp</option>
+				<option value="5">GlobalExpress</option>
+			</select>
+		</div>
+		<div>
+            <label for="insertdate">選擇日期：</label>
+			<input type="date" id="insertdate" name="insertdate">
+            <p></p>
+            <input type="submit" value="依平台與日期搜尋">
+            </div>
+            <button formaction="../GetAllDatasJoinOn">查詢所有外送資料</button>
+            <button formaction="AddData.html">新增外送資料</button>
+        </form>
+    </div>
+
+    
+
+</body>
+</html>
