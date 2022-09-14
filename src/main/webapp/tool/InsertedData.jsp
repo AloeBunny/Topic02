@@ -69,10 +69,11 @@
 					border: none;
 				}
 
-				div {
-					padding: 15px;
+				.box {
+					width: 50vw;
 					background-color: rgba(255, 255, 255, 0.2);
 					color: #fff;
+
 				}
 
 				th {
