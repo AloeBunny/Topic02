@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>外送資料查詢系統</title>
+	<title>查詢期間送單資料</title>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
 	<style>
@@ -128,7 +128,6 @@
 			border: none !important;
 		}
 	</style>
-
 </head>
 
 <body>
@@ -139,38 +138,40 @@
 		<a href="http://localhost:8080/Topic02/tool/GetDataByPeriod.html">區間資料查詢</a>
 	</div>
 
-	<div class="box container">
-		<p> </p>
-		<h1 align="center">外送資料查詢系統</h1>
-		<div align="center">
-			<form class="w3-container" method="post" action="../GetDataByDate">
-				<div>
-					<label for="d_pid">請選擇平台：</label>
-					<select class="w3-input" name="d_pid">
-						<option value=" " disabled selected>請選擇</option>
-						<option value="1">FoodPanda</option>
-						<option value="2">uberEat</option>
-						<option value="3">LaLaMove</option>
-						<option value="4">Pickupp</option>
-						<option value="5">GlobalExpress</option>
-					</select>
-				</div>
-				<p></p>
-				<div>
-					<label for="insertdate">選擇日期：</label>
-					<input class="w3-input" type="date" id="insertdate" name="insertdate">
-					<p></p>
-					<input class="w3-button w3-input w3-theme-l2" type="submit" value="依平台與日期搜尋">
-				</div>
-				<p> </p>
-				<p> </p>
+	<br>
+	<h2 align="center">查詢期間送單資料</h2>
+	<form class="box container" style="text-align: center;" method="post" action="../GetDataByPeriod">
+		<div>
+			<label for="d_pid">選擇平台：</label>
+			<select class="w3-input" name="d_pid">
+				<option value=" " disabled selected>請選擇</option>
+				<option value="1">FoodPanda</option>
+				<option value="2">uberEat</option>
+				<option value="3">LaLaMove</option>
+				<option value="4">Pickupp</option>
+				<option value="5">GlobalExpress</option>
+			</select>
+		</div>
+		<div>
+
+			<label for="insertdate1">選擇開始日期：</label>
+			<input class="w3-input" type="date" id="insertdate1" name="insertdate1">
+
+		</div>
+		<div>
+
+			<label for="insertdate2">選擇結束日期：</label>
+			<input class="w3-input" type="date" id="insertdate2" name="insertdate2">
+
 		</div>
 
-		</form>
-	</div>
+
+		<input class="w3-button w3-input w3-theme-l2" type="submit" value="確定" /> <br /> <br />
 
 
 
+
+	</form>
 </body>
 
 </html>

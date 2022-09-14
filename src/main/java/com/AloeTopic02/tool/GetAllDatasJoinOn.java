@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.AloeTopic02.bean.Allbean;
+import com.AloeTopic02.bean.FullBean;
 
 @WebServlet("/GetAllDatasJoinOn")
 public class GetAllDatasJoinOn extends HttpServlet {
@@ -43,12 +43,12 @@ public class GetAllDatasJoinOn extends HttpServlet {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 
-			List<Allbean> alls = new ArrayList<>();
+			List<FullBean> alls = new ArrayList<>();
 
-			Allbean all = null;
+			FullBean all = null;
 
 			while(rs.next()) {
-				all = new Allbean();
+				all = new FullBean();
 				
 				all.setD_pid(rs.getString("d_pid"));
 				all.setP_name(rs.getString("p_name"));

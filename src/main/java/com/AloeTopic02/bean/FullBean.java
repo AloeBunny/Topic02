@@ -2,7 +2,7 @@ package com.AloeTopic02.bean;
 
 import java.io.Serializable;
 
-public class Allbean implements Serializable {
+public class FullBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -21,11 +21,11 @@ public class Allbean implements Serializable {
 	private String m_password;
 	private String nickname;
 
-	public Allbean() {
+	public FullBean() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Allbean(String dd_id, String users_id, String d_pid, String insertdate, String worktime, String d_count,
+	public FullBean(String dd_id, String users_id, String d_pid, String insertdate, String worktime, String d_count,
 			String d_discount, String dailyincome, String p_id, String p_name, int m_id, String m_account,
 			String m_password, String nickname) {
 		super();
