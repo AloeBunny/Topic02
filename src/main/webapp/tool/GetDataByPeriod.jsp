@@ -145,9 +145,9 @@
 					<a href="http://localhost:8080/Topic02/tool/GetDataByPeriod.html">區間資料查詢</a>
 				</div>
 
-				<div class="box container">
+				<div align="center" class="box" style="margin:0 auto;">
 					<h2 align="center">期間外送紀錄</h2>
-					<table class="w3-table" border="1">
+					<table  border="1">
 
 						<%-- <tr>
 							<th style="background-color:#00AEAE" colspan=2>各項數據加總</th>

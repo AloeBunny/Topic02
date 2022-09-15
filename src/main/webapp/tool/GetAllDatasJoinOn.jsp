@@ -142,9 +142,9 @@
 					<a href="http://localhost:8080/Topic02/tool/GetDataByPeriod.html">區間資料查詢</a>
 				</div>
 
-				<div class="box container">
+				<div align="center" class="box" style="margin:0 auto;">
 					<h2>修改外送資料</h2>
-					<table border="1">
+					<table style="w3-table" border="1">
 						<tr style="background-color:#00AEAE">
 							<th>平台名稱
 							<th>資料日期
