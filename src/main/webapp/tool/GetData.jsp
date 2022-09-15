@@ -134,7 +134,12 @@
 		<div class="topnav">
 			<a class="active" href="http://localhost:8080/Topic02/tool/HomePage.html">首頁</a>
 			<a href="http://localhost:8080/Topic02/tool/AddData.html">新增外送資料</a>
-			<a href="GetAllDatasJoinOn">查看所有資料</a>
+			
+		<form id="form1" action="../GetAllDatasJoinOn" method="post">
+    <a href="javascript:;" onclick="document.getElementById('form1').submit();">查看所有資料</a>
+    <input type="hidden" name="mess" value="checkall"/>
+</form>
+
 			<a href="http://localhost:8080/Topic02/tool/GetDataByPeriod.html">區間資料查詢</a>
 		</div>
 
