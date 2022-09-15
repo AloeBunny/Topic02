@@ -130,15 +130,16 @@
     </head>
 
     <body style="background-color:#fdf5e6">
-      <div class="topnav">
-        <a class="active" href="http://localhost:8080/Topic02/tool/HomePage.html">首頁</a>
-        <a href="http://localhost:8080/Topic02/tool/AddData.html">新增外送資料</a>
+	<div class="topnav">
+		<a class="active" href="http://localhost:8080/Topic02/tool/HomePage.html">首頁</a>
+		<a href="http://localhost:8080/Topic02/tool/AddData.html">新增外送資料</a>
 		<form id="form1" action="../GetAllDatasJoinOn" method="post">
     <a href="javascript:;" onclick="document.getElementById('form1').submit();">查看所有資料</a>
     <input type="hidden" name="mess" value="checkall"/>
 </form>
-        <a href="http://localhost:8080/Topic02/tool/GetDataByPeriod.html">區間資料查詢</a>
-      </div>
+		<a href="http://localhost:8080/Topic02/tool/GetDataByPeriod.html">區間資料查詢</a>
+		<a href="http://localhost:8080/Topic02/tool/GetSumByPeriodAll.html">平台資料比較</a>
+	</div>
 
       <div class="box container">
         <h2>刪除外送資料</h2>

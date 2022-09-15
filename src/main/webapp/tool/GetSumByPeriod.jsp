@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-	import="java.util.*,com.AloeTopic02.bean.FullBean" %>
+	import="java.util.*, com.AloeTopic02.bean.DeliveryDataBean" %>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 		<%! @SuppressWarnings("unchecked") %>
 			<!DOCTYPE html>
@@ -7,7 +7,7 @@
 
 			<head>
 				<meta charset="UTF-8">
-				<title>所有外送資料</title>
+				<title>期間外送紀錄</title>
 				<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 				<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
 				<style>
@@ -69,9 +69,12 @@
 					}
 
 					.box {
-						width: 50vw;
+						width: 100vw;
 						background-color: rgba(255, 255, 255, 0.2);
 						color: #fff;
+
+
+
 					}
 
 					th {
@@ -132,56 +135,61 @@
 			</head>
 
 			<body style="background-color:#fdf5e6">
-	<div class="topnav">
-		<a class="active" href="http://localhost:8080/Topic02/tool/HomePage.html">首頁</a>
-		<a href="http://localhost:8080/Topic02/tool/AddData.html">新增外送資料</a>
-		<form id="form1" action="../GetAllDatasJoinOn" method="post">
-    <a href="javascript:;" onclick="document.getElementById('form1').submit();">查看所有資料</a>
-    <input type="hidden" name="mess" value="checkall"/>
-</form>
-		<a href="http://localhost:8080/Topic02/tool/GetDataByPeriod.html">區間資料查詢</a>
-		<a href="http://localhost:8080/Topic02/tool/GetSumByPeriodAll.html">平台資料比較</a>
-	</div>
+
 
 				<div align="center" class="box" style="margin:0 auto;">
-					<h2>所有外送資料</h2>
-					<table style="w3-table" border="1">
-						<tr style="background-color:#00AEAE">
-							<th style="display:none">0
-							<th>平台名稱
-							<th>資料日期
-							<th>工作時數
-							<th>當日接單
-							<th>當日拒單
-							<th>當日收入
-							<th>修改
-							<th>刪除
+					<h2 align="center">期間外送紀錄</h2>
+					<table  border="1">
 
-								<c:forEach items="${alls}" var="all" varStatus="s">
-									<%-- List<Allbean> alls =(ArrayList<Allbean>)request.getAttribute("alls"); --%>
-											<%-- for(Allbean all:alls ) {--%>
+						<%-- <tr>
+							<th style="background-color:#00AEAE" colspan=2>各項數據加總</th>
+							<th class="total">0
+							<th class="total">0
+							<th class="total">0
+							<th class="total">0
+							<th style="background-color:#00AEAE">取單率</th>
+							<th class="cal">0</th>
+							</tr>--%>
+													<tr>
+							<td>平台名稱
+							<td><select class="w3-input" name="d_pidNew">
+									<option value=" " disabled selected>請選擇</option>
+									<option <c:if test="${ddb1.d_pid=='1'}">selected</c:if> value="1">FoodPanda</option>
+									<option <c:if test="${ddb1.d_pid=='2'}">selected</c:if> value="2">uberEat</option>
+									<option <c:if test="${ddb1.d_pid=='3'}">selected</c:if> value="3">LaLaMove</option>
+									<option <c:if test="${ddb1.d_pid=='4'}">selected</c:if> value="4">Pickupp</option>
+									<option <c:if test="${ddb1.d_pid=='5'}">selected</c:if> value="5">GlobalExpress
+									</option>
+								</select>
+								<!--<input type="text" readonly value="${ddb.d_pid}" name="d_pidNew">-->
+						
+							<tr style="background-color:#00AEAE">
 
-						<tr>
-						<td style="display:none">${all.dd_id}
-							<td>${all.p_name}
-							<td>${all.insertdate }
-							<td>${all.worktime}
-							<td>${all.d_count }
-							<td>${all.d_discount }
-							<td>${all.dailyincome }
-							<td><a href="GetUpdateData?dd_id=${all.dd_id}">修改</a>
-							<td><a
-									href="javaScript:if(confirm('你確定要刪除嗎?')){location.href='DeleteData?dd_id=${all.dd_id}'}">刪除</a>
-								<c:set var="count" value="${s.count}" />
+							
+							
+								<th>總工作時數
+								<th>期間總接單
+								<th>期間總拒單
+								<th>期間總收入
 
-								<%--} --%>
-									</c:forEach>
+
+									<jsp:useBean id="ddb1" scope="request" class="com.AloeTopic02.bean.DeliveryDataBean" />
+							<tr>
+
+
+								<td>${ddb1.worktime}
+								<td>${ddb1.d_count }
+								<td>${ddb1.d_discount }
+								<td>${ddb1.dailyincome }
+							
 					</table>
-					<h3>一共${count}筆資料</h3>
+
+
 				</div>
 
 				<br />
 				<br />
+
 
 
 			</body>

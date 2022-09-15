@@ -32,6 +32,7 @@ public class GetSumByPeriod extends HttpServlet {
 		System.out.println(insertdate1);
 		String insertdate2 = request.getParameter("insertdate2"); 
 		System.out.println(insertdate2);
+		String d_pid = request.getParameter("d_pid");
 		
 		
 		try {
@@ -41,18 +42,20 @@ public class GetSumByPeriod extends HttpServlet {
 			
 			String sql = "select sum(worktime) Sworktime, sum(d_count) Sd_count, sum(d_discount) Sd_discount, sum(dailyincome) Sdailyincome \r\n"
 					+ "from DeliveryData \r\n"
-					+ "where d_pid=1 and users_id=1 and insertdate between ? and ?;";
+					+ "where users_id=1 and insertdate between ? and ? and d_pid= ? ;";
 			
 			PreparedStatement pest = conn.prepareStatement(sql);
 			pest.setString(1,insertdate1);
 			System.out.println(insertdate1);
 			pest.setString(2,insertdate2);
 			System.out.println(insertdate2);
+			pest.setString(3,d_pid);
 			
 			ResultSet rs = pest.executeQuery();
 			DeliveryDataBean ddb1 = new DeliveryDataBean();
 			
 			if(rs.next()) {
+				ddb1.setD_pid(d_pid);
 			ddb1.setWorktime(rs.getString("Sworktime"));
 			ddb1.setD_count(rs.getString("Sd_count"));
 			ddb1.setD_discount(rs.getString("Sd_discount"));
@@ -60,7 +63,7 @@ public class GetSumByPeriod extends HttpServlet {
 			}
 			request.setAttribute("ddb1", ddb1);
 			
-			request.getRequestDispatcher("/tool/*.jsp").forward(request, response);
+			request.getRequestDispatcher("/tool/GetSumByPeriod.jsp").forward(request, response);
 			
 			pest.close();
 			

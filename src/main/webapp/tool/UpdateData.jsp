@@ -133,15 +133,16 @@
 		</head>
 
 		<body style="background-color:#fdf5e6">
-			<div class="topnav">
-				<a class="active" href="http://localhost:8080/Topic02/tool/HomePage.html">首頁</a>
-				<a href="http://localhost:8080/Topic02/tool/AddData.html">新增外送資料</a>
+	<div class="topnav">
+		<a class="active" href="http://localhost:8080/Topic02/tool/HomePage.html">首頁</a>
+		<a href="http://localhost:8080/Topic02/tool/AddData.html">新增外送資料</a>
 		<form id="form1" action="../GetAllDatasJoinOn" method="post">
     <a href="javascript:;" onclick="document.getElementById('form1').submit();">查看所有資料</a>
     <input type="hidden" name="mess" value="checkall"/>
 </form>
-				<a href="http://localhost:8080/Topic02/tool/GetDataByPeriod.html">區間資料查詢</a>
-			</div>
+		<a href="http://localhost:8080/Topic02/tool/GetDataByPeriod.html">區間資料查詢</a>
+		<a href="http://localhost:8080/Topic02/tool/GetSumByPeriodAll.html">平台資料比較</a>
+	</div>
 
 			<div class="box container" align="center">
 				<h2>外送資料</h2>
@@ -152,7 +153,7 @@
 							<td>id
 							<td><input type="text" value="${ddb.dd_id }" name="dd_idNew">
 						<tr>
-							<td>平台代碼
+							<td>平台名稱
 							<td><select class="w3-input" name="d_pidNew">
 									<option value=" " disabled selected>請選擇</option>
 									<option <c:if test="${ddb.d_pid=='1'}">selected</c:if> value="1">FoodPanda</option>

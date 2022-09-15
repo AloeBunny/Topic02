@@ -44,7 +44,7 @@ public class GetDataByPeriod extends HttpServlet {
 			conn = ds.getConnection();
 
 
-			String sql ="select d_pid, p_name, insertdate, worktime, d_count, d_discount, dailyincome \r\n"
+			String sql ="select dd_id, d_pid, p_name, insertdate, worktime, d_count, d_discount, dailyincome \r\n"
 					+ "from D_platform dp \r\n"
 					+ "join DeliveryData d on d.d_pid = dp.p_id \r\n"
 					+ "where insertdate BETWEEN ? AND ? and users_id=1 and d_pid=? "
@@ -64,6 +64,7 @@ public class GetDataByPeriod extends HttpServlet {
 			while(rs.next()) {
 				all = new FullBean();
 				
+				all.setDd_id(rs.getString("dd_id"));
 				all.setD_pid(rs.getString("d_pid"));
 				all.setP_name(rs.getString("p_name"));
 				all.setInsertdate(rs.getString("insertdate"));

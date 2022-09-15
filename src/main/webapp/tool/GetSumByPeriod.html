@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>外送資料查詢系統</title>
+	<title>查詢期間資料加總</title>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
 	<style>
@@ -65,10 +65,9 @@
 		}
 
 		.box {
-			width: 50vw;
+			width: 80vw;
 			background-color: rgba(255, 255, 255, 0.2);
 			color: #fff;
-
 		}
 
 		th {
@@ -126,53 +125,45 @@
 			border: none !important;
 		}
 	</style>
-
 </head>
 
 <body>
-	<div class="topnav">
-		<a class="active" href="http://localhost:8080/Topic02/tool/HomePage.html">首頁</a>
-		<a href="http://localhost:8080/Topic02/tool/AddData.html">新增外送資料</a>
-		<form id="form1" action="../GetAllDatasJoinOn" method="post">
-    <a href="javascript:;" onclick="document.getElementById('form1').submit();">查看所有資料</a>
-    <input type="hidden" name="mess" value="checkall"/>
-</form>
-		<a href="http://localhost:8080/Topic02/tool/GetDataByPeriod.html">區間資料查詢</a>
-		<a href="http://localhost:8080/Topic02/tool/GetSumByPeriodAll.html">平台資料比較</a>
-	</div>
 
-	<div class="box container">
-		<p> </p>
-		<h1 align="center">外送資料查詢系統</h1>
-		<div align="center">
-			<form class="w3-container" method="post" action="../GetDataByDate">
-				<div>
-					<label for="d_pid">請選擇平台：</label>
-					<select class="w3-input" name="d_pid">
-						<option value=" " disabled selected>請選擇</option>
-						<option value="1">FoodPanda</option>
-						<option value="2">uberEat</option>
-						<option value="3">LaLaMove</option>
-						<option value="4">Pickupp</option>
-						<option value="5">GlobalExpress</option>
-					</select>
-				</div>
-				<p></p>
-				<div>
-					<label for="insertdate">選擇日期：</label>
-					<input class="w3-input" type="date" id="insertdate" name="insertdate">
-					<p></p>
-					<input class="w3-button w3-input w3-theme-l2" type="submit" value="依平台與日期搜尋">
-				</div>
-				<p> </p>
-				<p> </p>
+	<br>
+
+	<form class="box container" method="post" action="../GetSumByPeriod">
+		<h2 align="center">查詢期間送單資料</h2>
+		<div class="w3-container">
+			<label for="d_pid">選擇平台：</label>
+			<select class="w3-input" name="d_pid">
+				<option value=" " disabled selected>請選擇</option>
+				<option value="1">FoodPanda</option>
+				<option value="2">uberEat</option>
+				<option value="3">LaLaMove</option>
+				<option value="4">Pickupp</option>
+				<option value="5">GlobalExpress</option>
+			</select>
+		</div>
+		<div class="w3-container">
+
+			<label for="insertdate1">選擇開始日期：</label>
+			<input class="w3-input" type="date" id="insertdate1" name="insertdate1">
+
+		</div>
+		<div class="w3-container">
+
+			<label for="insertdate2">選擇結束日期：</label>
+			<input class="w3-input" type="date" id="insertdate2" name="insertdate2">
+
 		</div>
 
-		</form>
-	</div>
+
+		<input class="w3-button w3-input w3-theme-l2" type="submit" value="確定" /> <br /> <br />
 
 
 
+
+	</form>
 </body>
 
 </html>
