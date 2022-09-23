@@ -146,6 +146,7 @@
 					<h2>修改外送資料</h2>
 					<table style="w3-table" border="1">
 						<tr style="background-color:#00AEAE">
+						<th style="display:none">0
 							<th>平台名稱
 							<th>資料日期
 							<th>工作時數
@@ -160,15 +161,16 @@
 											<%-- for(Allbean all:alls ) {--%>
 
 						<tr>
+						<td style="display:none">${all.dd_id}
 							<td>${all.p_name}
 							<td>${all.insertdate }
 							<td>${all.worktime}
 							<td>${all.d_count }
 							<td>${all.d_discount }
 							<td>${all.dailyincome }
-							<td><a href="GetUpdateData?d_pid=${all.d_pid}&insertdate=${all.insertdate}">修改</a>
+							<td><a href="GetUpdateData?dd_id=${all.dd_id}">修改</a>
 							<td><a
-									href="javaScript:if(confirm('你確定要刪除嗎?')){location.href='DeleteData?d_pid=${all.d_pid}&insertdate=${all.insertdate}'}">刪除</a>
+									href="javaScript:if(confirm('你確定要刪除嗎?')){location.href='DeleteData?dd_id=${all.dd_id}'}">刪除</a>
 								<c:set var="count" value="${s.count}" />
 
 								<%--} --%>

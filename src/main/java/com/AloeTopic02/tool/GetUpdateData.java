@@ -26,8 +26,8 @@ public class GetUpdateData extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String insertdate = request.getParameter("insertdate");
-		String d_pid = request.getParameter("d_pid");
+//		String insertdate = request.getParameter("insertdate");
+		String dd_id = request.getParameter("dd_id");
 		String url = "jdbc:sqlserver://localhost:1433;databaseName = DeliveryRunner;trustServerCertificate = true";
 
 		try {
@@ -35,10 +35,10 @@ public class GetUpdateData extends HttpServlet {
 			Class.forName(JDBC_DRIVER);
 
 			conn = DriverManager.getConnection(url, "sa", "passw0rd");
-			String sql = "  select dd_id, d_pid, insertdate, worktime, d_count, d_discount, dailyincome from DeliveryData where insertdate = ? and d_pid = ? and users_id=1 ;";
+			String sql = "  select dd_id, d_pid, insertdate, worktime, d_count, d_discount, dailyincome from DeliveryData where dd_id = ? and users_id=1 ;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1, insertdate);
-			stmt.setString(2, d_pid);
+//			stmt.setString(1, insertdate);
+			stmt.setString(1, dd_id);
 			ResultSet rs = stmt.executeQuery();
 			DeliveryDataBean ddb = new DeliveryDataBean();
 			if (rs.next()) {

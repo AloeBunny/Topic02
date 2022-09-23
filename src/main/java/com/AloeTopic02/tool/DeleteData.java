@@ -28,7 +28,7 @@ public class DeleteData extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String d_pid = request.getParameter("d_pid");
+		String dd_id = request.getParameter("dd_id");
 		String insertdate = request.getParameter("insertdate"); 
 
 		try {
@@ -39,10 +39,10 @@ public class DeleteData extends HttpServlet {
 			conn = ds.getConnection();
 			
 			
-			String sql = "select d_pid, insertdate, worktime, d_count, d_discount, dailyincome from DeliveryData where users_id = 1 and d_pid= ? and insertdate= ?;";
+			String sql = "select d_pid, insertdate, worktime, d_count, d_discount, dailyincome from DeliveryData where users_id = 1 and dd_id = ?;";
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1,d_pid);
-			stmt.setString(2,insertdate);
+			stmt.setString(1,dd_id);
+//			stmt.setString(2,insertdate);
 			
 			ResultSet rs = stmt.executeQuery();
 			DeliveryDataBean ddb = new DeliveryDataBean();
@@ -58,10 +58,10 @@ public class DeleteData extends HttpServlet {
 			request.setAttribute("ddb", ddb);
 			
 			
-			String sql2 = "delete from DeliveryData where users_id = 1 and d_pid= ? and insertdate= ?;";
+			String sql2 = "delete from DeliveryData where users_id = 1 and dd_id = ?;";
 			PreparedStatement stmt2 = conn.prepareStatement(sql2);
-			stmt2.setString(1, d_pid);
-			stmt2.setString(2, insertdate);
+			stmt2.setString(1, dd_id);
+//			stmt2.setString(2, insertdate);
 			stmt2.executeUpdate();
 			
 			request.getRequestDispatcher("/tool/DeleteData.jsp").forward(request, response);

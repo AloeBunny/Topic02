@@ -35,7 +35,7 @@ public class GetAllDatasJoinOn extends HttpServlet {
 
 			Class.forName(JDBC_DRIVER);
 			conn = DriverManager.getConnection(url,ID ,PASSWORD );
-			String sql = "select d_pid, p_name, insertdate, worktime, d_count, d_discount, dailyincome\r\n"
+			String sql = "select dd_id, p_name, insertdate, worktime, d_count, d_discount, dailyincome\r\n"
 					+ "from D_platform dp\r\n"
 					+ "join DeliveryData dd\r\n"
 					+ "on dp.p_id = dd.d_pid\r\n"
@@ -50,7 +50,7 @@ public class GetAllDatasJoinOn extends HttpServlet {
 			while(rs.next()) {
 				all = new FullBean();
 				
-				all.setD_pid(rs.getString("d_pid"));
+				all.setDd_id(rs.getString("dd_id"));
 				all.setP_name(rs.getString("p_name"));
 				all.setInsertdate(rs.getString("insertdate"));
 				all.setWorktime(rs.getString("worktime"));
